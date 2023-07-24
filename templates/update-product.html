@@ -2,13 +2,18 @@
 {% load static %}
 {% block content %}
     <div>
-        <h1 class="text-secondary text-center">Add product</h1>
+        <h1 class="text-secondary text-center">Update product</h1>
         <form class="product-form" method="post" action="/update-product/{{ product.id }}">
             <p>{{ success }}</p>
             {% csrf_token %}
             <input value="{{ product.name }}"  required class="form-control" placeholder="Update name" name="p-name" type="text"><br>
             <input value="{{ product.qtty }}" required  class="form-control" placeholder="Update quantity" name="p-qtty" type="text"><br>
-            <input value="{{ product.size }}"  required class="form-control" placeholder="Update size" name="p-size" type="text"><br>
+            <select required class="form-control" name="p-size" id="">
+                <option value="{{ product.size }}">{{ product.size }}</option>
+                <option value="Small">Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
+            </select><br>
             <input value="{{ product.price }}" required  class="form-control"  placeholder="Update price" name="p-price" type="text"><br>
             <input  required class="btn btn-info" value="Update" type="submit">
         </form>

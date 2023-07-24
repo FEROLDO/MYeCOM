@@ -1,0 +1,9 @@
+{% extends 'master.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
+{% block content %}
+    <h3 class="text-info text-center mt-2">You've been Logged Out!</h3>
+
+    <a href="{% url 'logout' %}">Try Again</a>
+{% endblock %}

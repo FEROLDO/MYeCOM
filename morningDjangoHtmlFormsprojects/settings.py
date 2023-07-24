@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'morningDjangoHtmlFormsprojects'
+    'morningDjangoHtmlFormsprojects',
+    'crispy_forms',
+    'crispy_bootstrap4'
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,8 +125,9 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
-
+LOGIN_REDIRECT_URL = 'home-page'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = 'login'

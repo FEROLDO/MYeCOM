@@ -29,5 +29,7 @@ urlpatterns = [
     path('update-product/<id>', user_views.update_product, name='upd-product'),
     path('register/', user_views.register, name='user-registration'),
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
-    path('logout', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout')
+    path('logout', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
+    path('shop/', user_views.shop, name='shop'),
+    path('pay/<id>', user_views.pay, name='pay')
 ]

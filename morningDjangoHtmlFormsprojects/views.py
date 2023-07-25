@@ -36,7 +36,7 @@ def products(request):
     return render(request, 'products.html', context)
 
 @login_required
-def delete_product(request, id):
+def delete_product(request,     id):
     product = Products.objects.get(id=id)
     product.delete()
     messages.success(request, 'Product deleted successfully')
@@ -71,3 +71,13 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'register.html', {'form': form})
+
+def shop(request):
+    all_products = Products.objects.all()
+    context = {"all_products": all_products}
+    return render(request, 'shop.html', context)
+
+def pay(request, id):
+    product = Products.objects.get(id=id)
+    context = {"product": product}
+    return render(request, 'pay.html', context)
